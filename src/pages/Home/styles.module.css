@@ -1,0 +1,51 @@
+.form {
+  /* Layout e Alinhamento */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha itens verticalmente no centro */
+  align-items: center; /* Alinha itens horizontalmente no centro */
+  gap: 1.5rem; /* Aumentei um pouco o espaçamento entre os itens */
+
+  /* Espaçamento Interno e Dimensões */
+  padding: 2rem; /* Espaçamento interno para afastar o conteúdo das bordas */
+  width: 90%; /* Largura responsiva */
+  max-width: 500px; /* Limita a largura máxima para não ficar muito esticado em telas grandes */
+  margin: 2rem auto; /* Centraliza o formulário horizontalmente e dá espaçamento acima/abaixo */
+
+  /* Aparência */
+  background-color: #fcf8f3; /* Uma variação mais suave de antiquewhite, talvez #f8f8f8 ou #fff */
+  border: 1px solid #ddd; /* Borda mais discreta e comum */
+  border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+  font-family: "Arial", sans-serif; /* Define uma fonte mais comum e legível */
+  color: #333; /* Cor de texto padrão */
+}
+
+/* Opcional: Estilos para elementos dentro do formulário para complementar */
+.form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Espaço abaixo dos rótulos */
+  display: block; /* Garante que o label ocupe sua própria linha */
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form select,
+.form textarea {
+  width: 100%; /* Faz com que os inputs preencham a largura disponível */
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+}
+
+.form button {
+  background-color: #007bff; /* Uma cor de botão mais comum (azul) */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}

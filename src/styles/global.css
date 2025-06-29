@@ -1,0 +1,55 @@
+/* --- 1. Reset Básico --- */
+/* Remove margens e preenchimentos padrão do navegador e define box-sizing globalmente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura do elemento */
+}
+
+/* --- 2. Variáveis CSS (Cores e Fontes) --- */
+/* Define variáveis CSS para fácil reutilização e manutenção */
+:root {
+  --primary-color: #007bff; /* Azul vibrante */
+  --secondary-color: #6c757d; /* Cinza médio */
+  --accent-color: #28a745; /* Verde para destaque/sucesso */
+  --text-color: #333; /* Cor de texto principal (quase preto) */
+  --light-text-color: #666; /* Cor de texto secundária (cinza escuro) */
+  --background-color: #73767a52; /* Fundo claro para o corpo */
+  --white-color: #fff; /* Branco */
+  --border-color: #dee2e6; /* Cor de borda leve */
+
+  --font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-serif: "Georgia", serif;
+
+  --font-size-base: 1rem; /* 16px por padrão */
+  --line-height-base: 1.6;
+}
+
+/* --- 3. Estilos do Body --- */
+/* Estilos gerais aplicados a todo o corpo do documento */
+body {
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased; /* Suaviza as fontes para melhor leitura */
+  -moz-osx-font-smoothing: grayscale; /* Para Firefox */
+}
+
+/* --- 4. Estilos de Títulos --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-sans-serif); /* Pode mudar para serif se quiser */
+  color: var(--text-color);
+  line-height: 1.2;
+  margin-bottom: 0.5em; /* Espaçamento abaixo dos títulos */
+}
+
+h1 {
+  font-size: 2.5rem;
+}
