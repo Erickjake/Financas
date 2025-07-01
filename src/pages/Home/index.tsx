@@ -2,17 +2,18 @@ import { useContext, useState } from "react";
 import DefaultInput from "../../components/Input";
 import Layout from "../../Layout";
 import styles from './styles.module.css'
-import { FinancasContext } from "../../contexts/FinancasContext";
-import type { FinancasModel, FormDataType } from "../../models/FinancasModel";
+import type { Financa, FormDataType } from "../../models/FinancasModel";
 import DefaultSelect from "../../components/DefaultSelect";
+import { FinancasContexts } from "../../contexts/FinancasContext/FinancasContextProvider";
 export default function Home() {
-    const { adicionarTransacao } = useContext(FinancasContext)
+    const { adiconarFinanca } = useContext(FinancasContexts)
     const [formData, setFormData] = useState<FormDataType>({
         descricao: '',
         valor: '',
         data: '',
         categoria: '',
-        tipo: 'entrada',
+        tipo: 'receita',
+
     })
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -35,31 +36,39 @@ export default function Home() {
         { value: 'outros', text: 'Outros' },
     ];
     const tipoOptions = [
-        { value: 'entrada', text: 'Entrada' },
-        { value: 'saida', text: 'Saída' },
+        { value: 'receita', text: 'Receita' },
+        { value: 'despesa', text: 'Despesa' },
     ];
     function handleSubmitFinancas(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
+        e.preventDefault();
 
-        const novaTransacao: FinancasModel = {
+        // Validação simples para evitar adicionar valores inválidos
+        if (!formData.descricao || !formData.valor || isNaN(parseFloat(formData.valor)) || !formData.categoria || !formData.data || !formData.tipo) {
+
+
+            alert('Por favor, preencha a descrição e um valor válido.');
+            return;
+        }
+
+        const novaTransacao: Financa = {
             id: Date.now(),
             tipo: formData.tipo,
             descricao: formData.descricao,
             valor: parseFloat(formData.valor),
-            data: new Date(formData.data),
+            data: formData.data ? new Date(formData.data) : new Date(),
             categoria: formData.categoria,
         }
 
-        adicionarTransacao(novaTransacao);
+        adiconarFinanca(novaTransacao);
         setFormData({
             descricao: '',
             valor: '',
             data: '',
             categoria: '',
-            tipo: 'entrada',
+            tipo: 'receita',
         })
         alert('Transacao adiconada com sucesso!')
-        console.log(adicionarTransacao)
+        console.log(adiconarFinanca)
     }
 
 

@@ -1,0 +1,60 @@
+/* Styles for the table in Categories component */
+
+table {
+  width: 100%; /* A tabela ocupa toda a largura disponível */
+  border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
+  margin-top: 20px; /* Espaçamento acima da tabela */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para um efeito de profundidade */
+  background-color: #fff; /* Fundo branco para a tabela */
+  border-radius: 8px; /* Cantos arredondados na tabela */
+  overflow: hidden; /* Garante que os cantos arredondados sejam visíveis */
+}
+
+th,
+td {
+  padding: 12px 15px; /* Espaçamento interno das células */
+  text-align: left; /* Alinha o texto à esquerda */
+  border-bottom: 1px solid #ddd; /* Linha de separação entre as linhas */
+}
+
+th {
+  background-color: #f2f2f2; /* Fundo cinza claro para o cabeçalho */
+  color: #333; /* Cor do texto no cabeçalho */
+  font-weight: bold; /* Texto do cabeçalho em negrito */
+  text-transform: uppercase; /* Texto do cabeçalho em maiúsculas */
+  font-size: 0.9em; /* Tamanho da fonte um pouco menor */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fundo cinza claro para linhas pares (efeito zebrado) */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Cor de fundo ao passar o mouse sobre a linha */
+  cursor: pointer; /* Muda o cursor para indicar que a linha é interativa */
+}
+
+td:last-child {
+  text-align: center; /* Centraliza o conteúdo da última coluna (Ações) */
+}
+
+/* Estilo para os botões dentro das células de ação (se houver) */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background-color 0.3s ease; /* Transição suave na cor do botão */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button + button {
+  /* Espaçamento entre botões */
+  margin-left: 8px;
+}
