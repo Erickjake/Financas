@@ -49,13 +49,19 @@ export default function Home() {
             alert('Por favor, preencha a descrição e um valor válido.');
             return;
         }
+        const dataStringDoForm = formData.data;
 
+        // Substitui os hífens, resultando em '2025/07/02'
+        const dataAjustada = dataStringDoForm.replace(/-/g, '/');
+
+        // Agora, o new Date() interpretará no fuso horário local
+        const dataCorreta = new Date(dataAjustada);
         const novaTransacao: Financa = {
             id: Date.now(),
             tipo: formData.tipo,
             descricao: formData.descricao,
             valor: parseFloat(formData.valor),
-            data: formData.data ? new Date(formData.data) : new Date(),
+            data: dataCorreta,
             categoria: formData.categoria,
         }
 

@@ -58,3 +58,7 @@ button + button {
   /* Espaçamento entre botões */
   margin-left: 8px;
 }
+
+input {
+  text-transform: capitalize;
+}

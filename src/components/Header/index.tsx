@@ -9,7 +9,7 @@ export default function Header() {
             <div className={styles.cabecalho}>
                 <Link to="/" className={styles.items}>Home</Link>
                 <Link to="/categories" className={styles.items}>Categorias</Link>
-                <Link to="/transaction" className={styles.items}>Transações</Link>
+                <Link to="/dashboard" className={styles.items}>Dashboard</Link>
                 <Link to="/about" className={styles.items}>Conta</Link>
             </div>
 

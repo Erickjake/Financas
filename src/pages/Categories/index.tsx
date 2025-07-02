@@ -73,6 +73,7 @@ export default function Categories() {
                                                 name="categoria"
                                                 value={edit?.categoria || ''}
                                                 onChange={handleInputChange}
+                                                className={styles.input}
                                             />
                                         </td>
                                         <td className={styles.td}>
